@@ -108,6 +108,10 @@ function sav_arr() {
 	in_arr["name"] = tName;
 	in_arr["head"] = hCirc;
 	in_arr["height"] = tHeight;
+	
+	g_name = tName;
+	g_circ = hCirc;
+	g_ht = tHeight;
 }
 
 function sav_loc(arr) {
@@ -117,12 +121,12 @@ function sav_loc(arr) {
 }
 
 document.getElementById("submit").addEventListener("click", function() {
-	var tName = document.getElementById("name").value;
-	
 	sav_arr();
 	sav_loc(in_arr);
+	fill_head(g_circ);
+	fill_ht(g_ht);
 	document.getElementById("welcome_lock").style.display="none";
-	document.getElementById("welc_name").innerHTML="Hello:"+tName;
+	document.getElementById("welc_name").innerHTML="Hello:"+g_name;
 })
 
 document.getElementById("ignore").addEventListener("click", function() {
